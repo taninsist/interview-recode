@@ -1,7 +1,7 @@
 /**
  * 深拷贝 Alpha 版
- * @param {*} obj 
- * @returns 
+ * @param {*} obj
+ * @returns
  */
 function deepClone(obj) {
   const newData = Array.isArray(obj) ? [] : {};
