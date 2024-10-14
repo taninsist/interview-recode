@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="wrap">
+      <button id="btn">click</button>
+    </div>
+    <script>
+      const btnDom = document.getElementById("btn");
+      const wrap = document.getElementById("wrap");
+      const body = document.body;
+
+      btnDom.addEventListener("click", (e) => {
+        console.log("btnDom click1", e);
+      });
+
+      wrap.addEventListener("click", () => {
+        console.log("wrap");
+      });
+
+      body.addEventListener(
+        "click",
+        (e) => {
+          console.log("body capture");
+          // console.log(body);
+        },
+        true
+      );
+
+      btnDom.addEventListener(
+        "click",
+        (e) => {
+          console.log("btnDom click2 capture", e);
+        },
+        true
+      );
+
+      btnDom.addEventListener("click", (e) => {
+        console.log("btnDom click3", e);
+      });
+
+      /*
+      body capture
+      btnDom click2 capture
+      btnDom click1
+      btnDom click3
+      wrap
+       */
+    </script>
+  </body>
+</html>
