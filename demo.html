@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function reInstanceof(instance, target) {
+        let proto = instance.__proto__;
+        while (proto) {
+          if (proto === target.prototype) {
+            return true;
+          }
+          proto = proto.__proto__;
+        }
+        return false;
+      }
+
+      reInstanceof([], Array);
+    </script>
+  </body>
+</html>
